@@ -1,4 +1,4 @@
-<div class="container-fluid text-center">    
+<!-- <div class="container-fluid text-center">    
   <div class="row content">
     <div class="col-sm-5 sidenav">
       <input type="number" [formControl]="inCurrencyValue">
@@ -28,4 +28,29 @@
 <hr>
 <div>
   1 {{inCurrency.slice(-3)}} = {{multiplyFactor}}  {{outCurrency.slice(-3)}}
+</div> -->
+
+<div class="currency">
+    <input type="number" [formControl]="inCurrencyValue">
+    <span>
+        <select #i (change)="changeInValue(i.value)">
+            <option *ngFor="let data of loadData()">{{data}}</option>
+        </select>  
+    </span>
+</div>
+
+<div class="exchange">
+    <div><img src="../../assets/upArrow.png"></div>
+    <div class="rate"><em><h4>1 {{inCurrency.slice(-3)}} = {{multiplyFactor}}  {{outCurrency.slice(-3)}}</h4></em></div>
+    <div><img src="../../assets/downArrow.png"></div>
+</div>
+
+<div class="currency">
+    <div class="output">{{inCurrencyValue.value * multiplyFactor}}
+    <span>
+        <select #o (change)="changeOutValue(o.value)">
+            <option *ngFor="let data of Data">{{data}}</option>
+        </select>  
+    </span>
+    </div>
 </div>

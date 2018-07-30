@@ -1,0 +1,45 @@
+.currency {
+    font-size: -webkit-xxx-large;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.currency input {
+    background: white;
+    height: auto;
+    align-self: center;
+}
+
+.currency select {
+    background: blue;
+    color: aliceblue;
+    height: 100%;
+}
+
+.output {
+    background: white;
+    width: fit-content;
+    padding-left: 1%;
+}
+
+.exchange {
+    display: flex;
+    justify-content: center;
+    height: 250px;
+}
+
+img {
+    height: 100%;
+    padding: 10%;
+}
+
+.rate {
+    margin-bottom: auto;
+    margin-top: auto;
+    background-color: #fffd75;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font: bolder;
+    padding: 1%;
+    border-radius: 30%;
+}
