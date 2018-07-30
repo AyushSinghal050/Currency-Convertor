@@ -24,7 +24,8 @@ export class AppComponent implements OnInit {
         const data = response.json();
         this.appService.Data = data.quotes;
         this.appService.timestamp = data.timestamp;
-        this.appService.date = new Date(data.timestamp + 1531151251393);  // incorrect date from API
+        console.log(data.timestamp);
+        this.appService.date = new Date(data.timestamp * 1000);  // incorrect date from API
         console.log(this.appService.Data);
       },
       (error) => console.log(error)

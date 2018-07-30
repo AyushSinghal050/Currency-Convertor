@@ -10,8 +10,8 @@ import { AppService } from '../app.service';
 export class HomeComponent implements OnInit {
 
   Data = [];
-  inCurrency = 'USD';
-  outCurrency = 'USD';
+  inCurrency: string;
+  outCurrency: string;
   inValue = 1;
   outValue = 1;
   multiplyFactor = 1;
@@ -21,13 +21,13 @@ export class HomeComponent implements OnInit {
   constructor(private appService: AppService) { }
 
   ngOnInit() {
+    this.Data.push('USD');
+    this.outCurrency = 'USD';
+    this.inCurrency = 'USD';
   }
 
   changeMultiplyFactor() {
-    console.log('In', this.inValue);
-    console.log('Out', this.outValue);
     this.multiplyFactor = this.outValue / this.inValue;
-    console.log('Multiply', this.multiplyFactor);
     return this.multiplyFactor;
   }
 
@@ -35,7 +35,6 @@ export class HomeComponent implements OnInit {
     this.inCurrency = 'USD' + currencyIn;
     this.inValue = this.appService.Data[this.inCurrency];
     this.changeMultiplyFactor();
-    console.log(this.multiplyFactor, '||||', this.inCurrency, '/////', this.outCurrency);
   }
 
   changeOutValue(currencyOut: string) {
@@ -46,7 +45,7 @@ export class HomeComponent implements OnInit {
 
   loadData() {
     Object.keys(this.appService.Data).forEach(element => {
-      element = element.slice(3, 6);
+      element = element.slice(-3);
       this.Data.push(element);
     });
 
