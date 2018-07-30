@@ -16,7 +16,7 @@ export class HeaderComponent implements OnInit {
   }
   getDate() {
     this.date = this.appService.date;
-    console.log('Hi', this.date);
+ //   console.log('Hi', this.date);
     return this.date;
   }
 }
