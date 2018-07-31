@@ -43,3 +43,8 @@ img {
     padding: 1%;
     border-radius: 30%;
 }
+
+
+.ng-invalid {
+    border: 5px solid #a94442; /* red */
+  }

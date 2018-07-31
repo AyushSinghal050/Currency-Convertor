@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '../../../node_modules/@angular/forms';
+import { FormControl, Validators } from '../../../node_modules/@angular/forms';
 import { AppService } from '../app.service';
 
 @Component({
@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
   outValue = 1;
   multiplyFactor = 1;
 
-  inCurrencyValue = new FormControl(1);
+  inCurrencyValue = new FormControl(1, Validators.required);
 
   constructor(private appService: AppService) { }
 
